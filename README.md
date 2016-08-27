@@ -8,7 +8,7 @@ No Licence is intended.
 &copy; Copyright 2016 RedCrafts<sup>TM</sup>.
 
 
-## Getting started with project
+## Getting started with red-crafts project
    1. Access https://github.com/Naman-Kumar-Sinha/red-crafts/
    2. Click on "Clone or download".
    3. Choose "Open in Desktop" (recommended)
