@@ -2,8 +2,8 @@
 
 /* Controllers */
 
-var rcControllers = angular.module('rcControllers', []);
+var controllers = angular.module('controllers', []);
 
-rcControllers.controller('homeCtrl', function () {});
-rcControllers.controller('galleryCtrl', function () {});
-rcControllers.controller('createCtrl', function () {});
+controllers.controller('homeCtrl', function () {});
+controllers.controller('galleryCtrl', function () {});
+controllers.controller('createCtrl', function () {});
