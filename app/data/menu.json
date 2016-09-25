@@ -1,0 +1,8 @@
+
+{
+    "menu": [
+                {"title": "Home", "url": "partials/home.html"},
+                {"title": "Gallery", "url": "partials/gallery.html"},
+                {"title": "Create", "url": "partials/create.html"}      
+            ]
+}

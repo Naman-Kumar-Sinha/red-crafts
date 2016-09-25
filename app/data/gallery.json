@@ -1,0 +1,16 @@
+{
+    "inventory": [
+                    {"caption": "Blue Flower", "url": "images/Blueflower.jpg"},
+                    {"caption": "Green Lush", "url": "images/greenlush.jpg"},
+                    {"caption": "Love On Air", "url": "images/loveonair.jpg"},
+                    {"caption": "Purple Cards", "url": "images/purplecards.jpg"},
+                    {"caption": "For You", "url": "images/forYou.jpg"},
+                    {"caption": "Red Heart", "url": "images/redheart.jpg"},
+                    {"caption": "Blue Flower", "url": "images/Blueflower.jpg"},
+                    {"caption": "Green Lush", "url": "images/greenlush.jpg"},
+                    {"caption": "Love On Air", "url": "images/loveonair.jpg"},
+                    {"caption": "Purple Cards", "url": "images/purplecards.jpg"},
+                    {"caption": "For You", "url": "images/forYou.jpg"},
+                    {"caption": "Red Heart", "url": "images/redheart.jpg"}        
+                ]
+}

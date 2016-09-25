@@ -1,0 +1,6 @@
+{
+    "inventory": [
+                    {"caption": "Gallery", "url": "images/purplecards.jpg", "destination": "gallery"},
+                    {"caption": "Create", "url": "images/forYou.jpg", "destination": "create"}       
+                ]
+}
