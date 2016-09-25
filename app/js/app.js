@@ -4,21 +4,31 @@
 angular.module('redCrafts', [
     'ngRoute',
     'controllers',
-    'components'
+    'components',
+    'filters',
+    'services'
 ]).config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
     $locationProvider.hashPrefix('!');
     $routeProvider.
-        when('/Home', {
+        when('/home', {
             templateUrl: 'partials/home.html',
             controller: 'homeCtrl'
         }).
-        when('/Gallery', {
+        when('/gallery', {
             templateUrl: 'partials/gallery.html',
             controller: 'galleryCtrl'
         }).
-        when('/Create', {
+        when('/create', {
             templateUrl: 'partials/create.html',
             controller: 'createCtrl'
         }).
-        otherwise({redirectTo: '/Home'});
+        when('/login', {
+            templateUrl: 'partials/login.html',
+            controller: 'loginCtrl'
+        }).    
+        when('/error', {
+            templateUrl: 'partials/error.html',
+            controller: 'errorCtrl'
+        }).    
+        otherwise({redirectTo: '/home'});
 }]);
