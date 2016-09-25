@@ -1,9 +1,12 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('rcApp', [
+angular.module('redCrafts', [
     'ngRoute',
-    'rcControllers'
+    'controllers',
+    'components',
+    'filters',
+    'services'
 ]).config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
     $locationProvider.hashPrefix('!');
     $routeProvider.
@@ -19,5 +22,13 @@ angular.module('rcApp', [
             templateUrl: 'partials/create.html',
             controller: 'createCtrl'
         }).
+        when('/login', {
+            templateUrl: 'partials/login.html',
+            controller: 'loginCtrl'
+        }).    
+        when('/error', {
+            templateUrl: 'partials/error.html',
+            controller: 'errorCtrl'
+        }).    
         otherwise({redirectTo: '/home'});
 }]);

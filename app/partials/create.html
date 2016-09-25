@@ -1,1 +1,10 @@
-<p>This is create page.</p>
+<div class="row adjust-top-padding">
+    <div class="jumbotron adjust-jumbotron">
+        <h1>Choose your app</h1>
+    </div>
+    <div ng-repeat="item in inventory" class="col-md-3 col-sm-4 col-xs-6">
+        <div>
+            <button class="btn btn-default">{{item.title}}</button>
+        </div>        
+    </div>
+</div>

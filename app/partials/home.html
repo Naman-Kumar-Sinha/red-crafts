@@ -1,1 +1,22 @@
-<p>This is home page.</p>
+<div class="element adjust-top-padding">
+<div>
+    <img src="images/redcrafts-logo.png" id="logo" class="img-responsive logo-adjustment center-block"> 
+    <div class="jumbotron punchline">
+        <h1>Where magic happens</h1>
+        <h1><i class="glyphicon glyphicon-menu-down"></i></h1>
+    </div>
+</div>
+<!-- ---===== Animated logo colored---------->
+</div>
+<div class="wrappersections">
+    <div ng-repeat="item in inventory" class="col-sm-6 col-md-6 responsive-parent" ng-click="redirectToPath(item)">
+        <div class="child">
+            <img class="img-responsive turn-off-block-display img-fade-animation" src="{{item.url}}">
+            <a data-target="#" class="a-adjustment">{{item.caption}}</a>
+        </div>
+    </div>
+</div>
+
+
+
+

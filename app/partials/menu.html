@@ -1,0 +1,22 @@
+<nav class="adjust-nav" data-spy="affix">
+    <ul class="block-menu">
+        <li ng-repeat="menuItem in menuItems">
+            <a ng-href="#!/{{menuItem.title | lowercase}}" class="three-d menu-items">
+            {{menuItem.title}}
+            <span aria-hidden="true" class="three-d-box">
+                <span class="front">{{menuItem.title}}</span>
+                <span class="back">{{menuItem.title}}</span>
+            </span>
+            </a>
+        </li>
+        <li class="search-area align-right">
+            <div class="form-group has-feedback">
+                <input type="text" id="searchBox" class="form-control glyphicon glyphicon-search" ng-model="sharedObj.search" ng-change="redirectToPath()" placeholder="Search">
+                <span class="glyphicon glyphicon-search form-control-feedback adjust-search-gyphicon"></span>
+            </div>
+        </li>
+        <li class="right-side menu-items">
+            <i class="glyphicon glyphicon-log-in" ng-click="redirectToLogin()"></i>
+        </li>
+    </ul>
+</nav>
