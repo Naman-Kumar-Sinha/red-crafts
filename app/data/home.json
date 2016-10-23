@@ -1,6 +1,6 @@
 {
     "inventory": [
-                    {"caption": "Gallery", "url": "images/purplecards.jpg", "destination": "gallery"},
-                    {"caption": "Create", "url": "images/forYou.jpg", "destination": "create"}       
+                    {"caption": "Gallery", "url": "images/purplecards.jpg", "destination": "gallery", "description": "From handmade cards to canvas art. You name it, we have it."},
+                    {"caption": "Create", "url": "images/forYou.jpg", "destination": "create", "description": "Something new, something awesome. We bet you will awe a lot. Get your creative caps on and build something wonderful with us today."}       
                 ]
 }
