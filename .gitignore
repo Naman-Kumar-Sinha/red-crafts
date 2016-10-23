@@ -1,10 +1,6 @@
 logs/*
 !.gitkeep
 node_modules/
-app/bootstrap-3.3.7-dist/
-app/bower_components
-e2e-tests
 tmp
-bower.json
 .DS_Store
 .idea
