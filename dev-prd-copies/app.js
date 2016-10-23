@@ -11,7 +11,7 @@ var app = angular.module('redCrafts', [
 ]);
 
 app.constant('FB_PARAMS', {
-    'FB_APP_ID': '1812997352279992',
+    'FB_APP_ID': '1546820488942601',
     'FB_APP_VERSION': 'v2.8',
     'FB_GRAPH_API_CALL': '/me?fields=first_name,age_range,gender,locale,picture,timezone',
     'FB_SCOPE': 'public_profile,user_friends,email',
@@ -21,7 +21,8 @@ app.constant('FB_PARAMS', {
     'FB_UNAUTHORIZED': 'not_authorized'
 });
 
-app.config(['$locationProvider', '$routeProvider','ezfbProvider','FB_PARAMS', function ($locationProvider, $routeProvider, ezfbProvider, FB_PARAMS) {
+app.config(['$locationProvider', '$routeProvider','ezfbProvider','FB_PARAMS', '$compileProvider', function ($locationProvider, $routeProvider, ezfbProvider, FB_PARAMS, $compileProvider) {
+    $compileProvider.debugInfoEnabled(false);
     $locationProvider.hashPrefix('!');
     $routeProvider.
         when('/home', {
