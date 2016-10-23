@@ -23,10 +23,13 @@
   }
 }
 
-html,
+/*html,
 body {
-height: 100%;
-    background: #000 !important;
+    height: 100%;
+}*/
+
+html {
+    height: 100%;
 }
 
 /*--------menu-1 --original---------------*/
@@ -358,7 +361,7 @@ body{}
     bottom: 0;
     right: 0;
     margin: auto;
-    width: 80%;
+    width: auto;
     max-width: 700px;
 }
 
@@ -506,7 +509,7 @@ img.img-fade-animation {
 }
 
 img.img-fade-animation:hover {
-    opacity: 0.1;
+    opacity: 0.2;
     transition: opacity .5s ease-in-out;
     -moz-transition: opacity .5s ease-in-out;
     -webkit-transition: opacity .5s ease-in-out; 
@@ -519,7 +522,7 @@ img.img-fade-animation:hover {
 }
 
 img.logo-adjustment {
-    transform: scale(0.5);
+    transform: scale(0.9);
 }
 
 .align-right {
@@ -529,14 +532,24 @@ img.logo-adjustment {
 }
 
 .adjust-jumbotron {
-    background-color: #000 !important;
+    background-color: #fff !important;
     color: gray !important;
+    margin-bottom: 0px !important;
+    border-radius: 0px !important;
+    text-align: center;
+    opacity: 0.9;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 100%;
+    width: 100%;
 }
 
 .punchline {
     background-color: transparent !important;
     text-align: center !important;
     color: #fff !important;
+    margin-bottom: 0px !important;
 }
 
 .adjust-nav {
@@ -673,4 +686,116 @@ div.preview-block:focus {
 .center-container {
     margin: 10% 0 !important;
     }
+}
+.logo-punchline {
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+
+.fb-login-custom-style {
+    background-color: #4267B2;
+}
+
+.social-custom-style {
+    text-align: center;
+}
+
+.adjust-dropdown-menu {
+    left: -100% !important;
+}
+
+.adjust-hyperlink {
+    color: white;
+}
+
+.login-cover {
+    /* The image used */
+    background: url('../images/bike.jpg') no-repeat center center fixed;
+
+    /* Create the parallax scrolling effect */
+    background-size: cover; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+.no-cover {
+    background: #000 no-repeat center center fixed;
+}
+
+.error-cover {
+    /* The image used */
+    background: url('../images/vintagecar.jpg') no-repeat center center fixed;
+
+    /* Create the parallax scrolling effect */
+    background-size: cover; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+.profile-cover {
+    /* The image used */
+    background: url('../images/bike.jpg') no-repeat center center fixed;
+
+    /* Create the parallax scrolling effect */
+    background-size: cover; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+.create-cover {
+    /* The image used */
+    background: url('../images/exmachinia.jpg') no-repeat center center fixed;
+
+    /* Create the parallax scrolling effect */
+    background-size: cover; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+.transparent-body {
+    background: transparent no-repeat center center fixed;
+}
+.center-align-hor-vert {
+    position: absolute !important;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.apply-color {
+    background-color: rgba(0, 0, 0, 0.48) !important;
+    color: #fff;
+    border-color: transparent !important;
+    text-align: center;
+}
+
+.adjust-size-logo {
+    background-color: transparent !important;
+    width: 50%;
+}
+
+.fb-type-style {
+    background: #4267B2 !important;
+    border-color: transparent !important;
+    color: white !important;
+    position: relative;
+}
+
+.adjust-fb-logo {
+    width: 10% !important;
+}
+
+.center-align-vert {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.adjust-profile-display {
+    width: 15%;
 }

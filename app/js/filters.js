@@ -6,6 +6,12 @@
 
 var filters = angular.module('filters', []);
 
+filters.filter('isEmptyObject', function() {
+   return function(object) {
+       return angular.equals({}, object);
+   }; 
+});
+
 filters.filter('range', function() {
     return function(inputArray, total) {
         if(total && isInteger(total)) {
