@@ -80,7 +80,7 @@ controllers.controller('createCtrl', ['$scope', '$http', '$location', function (
     });
 }]);
 
-controllers.controller('menuCtrl', ['$scope', '$rootScope', '$element', '$http', 'SharedData', '$location', 'ezfb', 'FB_PARAMS', function ($scope, $rootScope, $element, $http, SharedData, $location, ezfb, FB_PARAMS) {   
+controllers.controller('menuCtrl', ['$scope', '$rootScope', '$element', '$http', 'SharedData', '$location', 'ezfb', function ($scope, $rootScope, $element, $http, SharedData, $location, ezfb) {   
     //HTTP service to get menu items
     $http({
         method: 'GET',
@@ -103,15 +103,15 @@ controllers.controller('menuCtrl', ['$scope', '$rootScope', '$element', '$http',
     };
     
     //ezfb Service library Event subscription code for Facebook login.
-    ezfb.Event.subscribe(FB_PARAMS.FB_EVENT_LOGIN, function (res) {
+    ezfb.Event.subscribe('auth.login', function (res) {
         $rootScope.loginStatus = res;
-        if(res.status === FB_PARAMS.FB_CONNECTED){
+        if(res.status === 'connected'){
             // the user is logged in and has authenticated your
             // app, and response.authResponse supplies
             // the user's ID, a valid access token, a signed
             // request, and the time the access token 
             // and signed request each expire
-        } else if (res.status === FB_PARAMS.FB_UNAUTHORIZED) {
+        } else if (res.status === 'not_authorized') {
             // the user is logged in to Facebook, 
             // but has not authenticated your RedCrafts.
         } else {
@@ -122,15 +122,15 @@ controllers.controller('menuCtrl', ['$scope', '$rootScope', '$element', '$http',
     });
     
     //ezfb Service library Event subscription code for Facebook logout.
-    ezfb.Event.subscribe(FB_PARAMS.FB_EVENT_LOGOUT, function (res) {
+    ezfb.Event.subscribe('auth.logout', function (res) {
         $rootScope.loginStatus = res;
-        if(res.status === FB_PARAMS.FB_CONNECTED){
+        if(res.status === 'connected'){
             // the user is logged in and has authenticated your
             // app, and response.authResponse supplies
             // the user's ID, a valid access token, a signed
             // request, and the time the access token 
             // and signed request each expire
-        } else if (res.status === FB_PARAMS.FB_UNAUTHORIZED) {
+        } else if (res.status === 'not_authorized') {
             // the user is logged in to Facebook, 
             // but has not authenticated to RedCrafts.
         } else {
@@ -179,7 +179,7 @@ controllers.controller('tabsCtrl', ['$scope', '$element', function ($scope, $ele
 
 controllers.controller('errorCtrl', function () {});
 
-controllers.controller('loginCtrl', ['$scope','$location','ezfb', 'FB_PARAMS', function ($scope, $location, ezfb, FB_PARAMS) {
+controllers.controller('loginCtrl', ['$scope','$location','ezfb', function ($scope, $location, ezfb) {
     $scope.fbLogin = function () {
         ezfb.login(function(res) {
             if(res.authResponse) {
@@ -187,15 +187,15 @@ controllers.controller('loginCtrl', ['$scope','$location','ezfb', 'FB_PARAMS', f
             }
         }, 
         {
-            scope: FB_PARAMS.FB_SCOPE
+            scope: 'public_profile,user_friends,email'
         });
     }
 }]);
 
-controllers.controller('profileCtrl', ['$scope','ezfb', 'FB_PARAMS', function ($scope, ezfb, FB_PARAMS) {
+controllers.controller('profileCtrl', ['$scope','ezfb', function ($scope, ezfb) {
     ezfb.getLoginStatus(function (res) {
-        if(res.status === FB_PARAMS.FB_CONNECTED) {
-            ezfb.api(FB_PARAMS.FB_GRAPH_API_CALL, function (me) {
+        if(res.status === 'connected') {
+            ezfb.api('/me?fields=first_name,age_range,gender,locale,picture,timezone', function (me) {
                 $scope.fbProfilePic = me.picture.data.url;
                 $scope.firstName = me.first_name;
             });

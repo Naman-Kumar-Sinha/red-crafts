@@ -10,18 +10,7 @@ var app = angular.module('redCrafts', [
     'ezfb'
 ]);
 
-app.constant('FB_PARAMS', {
-    'FB_APP_ID': '1812997352279992',
-    'FB_APP_VERSION': 'v2.8',
-    'FB_GRAPH_API_CALL': '/me?fields=first_name,age_range,gender,locale,picture,timezone',
-    'FB_SCOPE': 'public_profile,user_friends,email',
-    'FB_EVENT_LOGIN': 'auth.login',
-    'FB_EVENT_LOGOUT': 'auth.logout',
-    'FB_CONNECTED': 'connected',
-    'FB_UNAUTHORIZED': 'not_authorized'
-});
-
-app.config(['$locationProvider', '$routeProvider','ezfbProvider','FB_PARAMS', function ($locationProvider, $routeProvider, ezfbProvider, FB_PARAMS) {
+app.config(['$locationProvider', '$routeProvider','ezfbProvider', function ($locationProvider, $routeProvider, ezfbProvider) {
     $locationProvider.hashPrefix('!');
     $routeProvider.
         when('/home', {
@@ -51,14 +40,17 @@ app.config(['$locationProvider', '$routeProvider','ezfbProvider','FB_PARAMS', fu
         otherwise({redirectTo: '/home'}); 
     
     ezfbProvider.setInitParams({
-    appId: FB_PARAMS.FB_APP_ID,
+    appId: '1812997352279992',
     status: true,
     channelUrl: 'app/channel.html',
-    version: FB_PARAMS.FB_APP_VERSION
+    // Module default is `v2.6`.
+    // If you want to use Facebook platform `v2.3`, you'll have to add the following parameter.
+    // https://developers.facebook.com/docs/javascript/reference/FB.init
+    version: 'v2.8'
   }); 
 }]);
 
-app.run(['$rootScope', '$location', '$route', 'ezfb', function($rootScope, $location, $route, ezfb) {
+app.run( function($rootScope, $location, $route, ezfb) {
     $rootScope.$watch(function() { 
         return $location.path(); 
     },
@@ -94,4 +86,4 @@ app.run(['$rootScope', '$location', '$route', 'ezfb', function($rootScope, $loca
             });
         }
     });
-}]);
+});
