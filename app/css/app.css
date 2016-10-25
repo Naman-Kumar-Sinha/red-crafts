@@ -361,7 +361,7 @@ body{}
     bottom: 0;
     right: 0;
     margin: auto;
-    width: auto;
+    width: 100%;
     max-width: 700px;
 }
 
@@ -701,10 +701,6 @@ div.preview-block:focus {
     text-align: center;
 }
 
-.adjust-dropdown-menu {
-    left: -100% !important;
-}
-
 .adjust-hyperlink {
     color: white;
 }
@@ -798,4 +794,24 @@ div.preview-block:focus {
 
 .adjust-profile-display {
     width: 15%;
+}
+
+.brand-menu-container {
+    position: relative;
+    height: 20px;
+    width: 32px;
+}
+
+.brand-menu {
+    position: absolute;
+}
+
+.adjust-top-margin {
+    margin-top: 0px;
+}
+
+@media(max-width:768px){
+.adjust-top-margin {
+    margin-top: 60px;
+    }
 }
