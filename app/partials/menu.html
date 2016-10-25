@@ -1,5 +1,10 @@
 <nav class="adjust-nav" data-spy="affix">
     <ul class="block-menu">
+        <li>
+            <div class="brand-menu-container">
+                <img alt="RedCrafts" src="images/redcraftsbrand.png" class="img-responsive brand-menu">  
+            </div>
+        </li>
         <li ng-repeat="menuItem in menuItems">
             <a ng-href="#!/{{menuItem.title | lowercase}}" class="three-d menu-items">
             {{menuItem.title}}
@@ -20,7 +25,7 @@
             <i class="glyphicon glyphicon-user dropdown-toggle" data-toggle="dropdown" ng-if="$root.loginStatus.status === 'connected'">
                 <span class="caret"></span>
             </i>
-            <ul class="dropdown-menu adjust-dropdown-menu">
+            <ul class="dropdown-menu dropdown-menu-right">
                 <!-- dropdown menu links -->
                 <li><a tabindex="-1" ng-href="#!/profile">Your Profile</a></li>
                 <li class="divider"></li>
